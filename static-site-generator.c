@@ -38,7 +38,7 @@ void print_buffer(char *buf) {
 
 }
 
-int main() {
+int main(int argc, char *argv[]) {
     FILE* input;
     DIR* directory_to_watch;
     int c;
@@ -46,9 +46,13 @@ int main() {
     char * file_buffer;
     struct stat* input_file_buffer;
     int fd;
+    
+    printf("\nUsage: static-site-gen [OPTIONS] DIRECTORY\n\n");
+    printf("Options:\n");
+    printf("--watch, -w   Watch the files\n");
+    printf("--serve, -s   Serve a simple HTTP server to preview site.\n");
 
     fd = open("input.md", O_RDONLY);
-
 
     input = fopen("input.md", "r");
     if (input == NULL) {
