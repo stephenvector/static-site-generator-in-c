@@ -10,4 +10,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: build
-      run: gcc static-site-generator.c
+      run: gcc static-site-generator.c -o static-site-generator
